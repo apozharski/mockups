@@ -13,8 +13,8 @@ extern "C" {
 #define libmad_real double
 
 // function pointer types
-typedef int (*NlpConstrJacStructure)(libmad_int*, libmad_real*, void*);
-typedef int (*NlpLagHessStructure)(libmad_int*, libmad_real*, void*);
+typedef int (*NlpConstrJacStructure)(libmad_int*, libmad_int*, void*);
+typedef int (*NlpLagHessStructure)(libmad_int*, libmad_int*, void*);
 typedef int (*NlpEvalObj)(const libmad_real*, libmad_real*, void*);
 typedef int (*NlpEvalConstr)(const libmad_real*, libmad_real*, void*);
 typedef int (*NlpEvalObjGrad)(const libmad_real*, libmad_real*, void*);
