@@ -44,9 +44,9 @@ void* eval_h,
 void* user_data);
 
 int libmad_nlpmodel_set_numerics(CNLPModel* nlp_ptr,
- libmad_real* x0, libmad_real* y0,
- libmad_real* lvar, libmad_real* uvar,
- libmad_real* lcon, libmad_real* ucon
+ const libmad_real* x0, const libmad_real* y0,
+ const libmad_real* lvar, const libmad_real* uvar,
+ const libmad_real* lcon, const libmad_real* ucon
 );
 
 int madnlp_get_obj(MadNLPExecutionStats* stats_ptr, libmad_real* out);
