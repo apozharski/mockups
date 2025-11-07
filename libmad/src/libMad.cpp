@@ -21,7 +21,7 @@ int libmad_nlpmodel_create(CNLPModel** nlp_ptr_ptr,
                            libmad_int nvar, libmad_int ncon,
                            libmad_int nnzj, libmad_int nnzh,
                            NlpConstrJacStructure jac_struct, NlpLagHessStructure hess_struct,
-                           NlpEvalObj eval_f, lpEvalConstr eval_g,
+                           NlpEvalObj eval_f, NlpEvalConstr eval_g,
                            NlpEvalObjGrad eval_grad_f, NlpEvalConstrJac eval_jac_g,
                            NlpEvalLagHess eval_h,
                            void* user_data) { return 0;}
