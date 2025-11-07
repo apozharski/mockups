@@ -17,14 +17,14 @@ int libmad_set_string_option(OptsDict* opts_ptr, const char* name, const char* v
 int libmad_delete_options_dict(OptsDict* stats_ptr) { return 0; }
 
 int libmad_nlpmodel_create(CNLPModel** nlp_ptr_ptr,
-const char* name,
-libmad_int nvar, libmad_int ncon,
-libmad_int nnzj, libmad_int nnzh,
-void* jac_struct, void* hess_struct,
-void* eval_f, void* eval_g,
-void* eval_grad_f, void* eval_jac_g,
-void* eval_h,
-void* user_data) { return 0; }
+                           const char* name,
+                           libmad_int nvar, libmad_int ncon,
+                           libmad_int nnzj, libmad_int nnzh,
+                           NlpConstrJacStructure jac_struct, NlpLagHessStructure hess_struct,
+                           NlpEvalObj eval_f, lpEvalConstr eval_g,
+                           NlpEvalObjGrad eval_grad_f, NlpEvalConstrJac eval_jac_g,
+                           NlpEvalLagHess eval_h,
+                           void* user_data) { return 0;}
 
 int libmad_nlpmodel_set_numerics(CNLPModel* nlp_ptr,
  const libmad_real* x0, const libmad_real* y0,

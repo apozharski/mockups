@@ -12,6 +12,16 @@ extern "C" {
 #define libmad_int int64_t
 #define libmad_real double
 
+// function pointer types
+typedef int (*NlpConstrJacStructure)(libmad_int*, libmad_real*, void*);
+typedef int (*NlpLagHessStructure)(libmad_int*, libmad_real*, void*);
+typedef int (*NlpEvalObj)(const libmad_real*, libmad_real*, void*);
+typedef int (*NlpEvalConstr)(const libmad_real*, libmad_real*, void*);
+typedef int (*NlpEvalObjGrad)(const libmad_real*, libmad_real*, void*);
+typedef int (*NlpEvalConstrJac)(const libmad_real*, libmad_real*, void*);
+typedef int (*NlpEvalLagHess)(libmad_real, const libmad_real*, const libmad_real*, libmad_real*, void*);
+
+
 typedef struct OptsDict OptsDict;
 typedef struct CNLPModel CNLPModel;
 typedef struct MadNLPExecutionStats MadNLPExecutionStats;
@@ -37,10 +47,10 @@ int libmad_nlpmodel_create(CNLPModel** nlp_ptr_ptr,
 const char* name,
 libmad_int nvar, libmad_int ncon,
 libmad_int nnzj, libmad_int nnzh,
-void* jac_struct, void* hess_struct,
-void* eval_f, void* eval_g,
-void* eval_grad_f, void* eval_jac_g,
-void* eval_h,
+NlpConstrJacStructure jac_struct, NlpLagHessStructure hess_struct,
+NlpEvalObj eval_f, lpEvalConstr eval_g,
+NlpEvalObjGrad eval_grad_f, NlpEvalConstrJac eval_jac_g,
+NlpEvalLagHess eval_h,
 void* user_data);
 
 int libmad_nlpmodel_set_numerics(CNLPModel* nlp_ptr,
