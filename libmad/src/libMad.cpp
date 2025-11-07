@@ -12,7 +12,7 @@ int libmad_set_double_option(OptsDict* opts_ptr, const char* name, libmad_real v
 
 int libmad_set_bool_option(OptsDict* opts_ptr, const char* name, bool val) { return 0; }
 
-int libmad_set_string_option(OptsDict* opts_ptr, const char* name, char* val) { return 0; }
+int libmad_set_string_option(OptsDict* opts_ptr, const char* name, const char* val) { return 0; }
 
 int libmad_delete_options_dict(OptsDict* stats_ptr) { return 0; }
 

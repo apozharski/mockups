@@ -29,7 +29,7 @@ int libmad_set_double_option(OptsDict* opts_ptr, const char* name, libmad_real v
 
 int libmad_set_bool_option(OptsDict* opts_ptr, const char* name, bool val);
 
-int libmad_set_string_option(OptsDict* opts_ptr, const char* name, char* val);
+int libmad_set_string_option(OptsDict* opts_ptr, const char* name, const char* val);
 
 int libmad_delete_options_dict(OptsDict* stats_ptr);
 
@@ -67,9 +67,9 @@ int madnlp_get_success(MadNLPExecutionStats* stats_ptr, bool* out);
 
 int madnlp_get_iters(MadNLPExecutionStats* stats_ptr, libmad_int* out);
 
-int madnlp_get_primal_feas(MadNLPExecutionStats* stats_ptr, libmad_int* out);
+int madnlp_get_primal_feas(MadNLPExecutionStats* stats_ptr, libmad_real* out);
 
-int madnlp_get_dual_feas(MadNLPExecutionStats* stats_ptr, libmad_int* out);
+int madnlp_get_dual_feas(MadNLPExecutionStats* stats_ptr, libmad_real* out);
 
 int madnlp_get_status(MadNLPExecutionStats* stats_ptr, libmad_int* out);
 
