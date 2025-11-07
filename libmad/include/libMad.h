@@ -19,22 +19,22 @@ typedef struct MadNLPSolver MadNLPSolver;
 
 int libmad_create_options_dict(OptsDict** opts_ptr);
 
-int libmad_set_int_option(OptsDict* opts_ptr, char* name, int val);
+int libmad_set_int_option(OptsDict* opts_ptr, const char* name, int val);
 
-int libmad_set_long_option(OptsDict* opts_ptr, char* name, libmad_int val);
+int libmad_set_long_option(OptsDict* opts_ptr, const char* name, libmad_int val);
 
-int libmad_set_float_option(OptsDict* opts_ptr, char* name, float val);
+int libmad_set_float_option(OptsDict* opts_ptr, const char* name, float val);
 
-int libmad_set_double_option(OptsDict* opts_ptr, char* name, libmad_real val);
+int libmad_set_double_option(OptsDict* opts_ptr, const char* name, libmad_real val);
 
-int libmad_set_bool_option(OptsDict* opts_ptr, char* name, bool val);
+int libmad_set_bool_option(OptsDict* opts_ptr, const char* name, bool val);
 
-int libmad_set_string_option(OptsDict* opts_ptr, char* name, char* val);
+int libmad_set_string_option(OptsDict* opts_ptr, const char* name, char* val);
 
 int libmad_delete_options_dict(OptsDict* stats_ptr);
 
 int libmad_nlpmodel_create(CNLPModel** nlp_ptr_ptr,
-char* name,
+const char* name,
 libmad_int nvar, libmad_int ncon,
 libmad_int nnzj, libmad_int nnzh,
 void* jac_struct, void* hess_struct,
